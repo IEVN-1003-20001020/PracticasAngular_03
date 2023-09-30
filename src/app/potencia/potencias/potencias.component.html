@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-6">
+            <div>
+                <label for="num1" class="col-sm-10 col-form-label">Numero que quieres repetir:</label>
+                <div class="col-sm-6">
+                    <input  type="text" class="form-control" name="num1" [(ngModel)]="num1">
+                </div>
+            </div>
+            <div >
+                <label for="num2" class="col-sm-10 col-form-label">Numero de veces a repetir:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="num2" [(ngModel)]="num2">
+                </div>
+            </div>
+            <div>
+                <button (click)="calcular()" class="btn btn-danger">Calcular</button>
+            </div>
+        </div>
+        <div class="col-6"></div>
+        <h2>Resultado: {{resultadoMsg}}</h2>
+    </div>
+
+    
+
+
+
+    
+
+    <!-- <div>
+        <h2>Numero a sumar</h2>
+
+    <input type="text">
+
+    <h2>Numero de veces que se va a sumar</h2>
+
+    <input type="text">
+    </div> -->
+    
+
+   
+
+ 
+    
+</body>
+</html>
