@@ -1,69 +1,128 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
 
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinepolis</title>
 </head>
-<body>
 
-    <div class="container border p-6 float-left">
-    <h1>Entradas</h1>
-    
-    <label class="mb-3 col-4" for="nombre">Nombre de la persona:</label>
-    <input type="text" id="nombre"><br>
-
-    <label class="mb-3 col-4" for="cantidad">Cantidad de compradores</label>
-    <input type="number" id="cantidad"><br>
-
-    <label class="mb-3 col-4" >Tarjeta Cinepolis</label>
+<body class="jeje">
+    <form (ngSubmit)="MaxBol()">
+        <div class="container">
+            <div class="titulo" >
 
 
-    <input type="radio" id="sum"  name="calculo" value="sum" />
-    <label class="mb-3 col-1" for="suma">Si</label>
+                <br>
+                <br>
 
-    <input type="radio" id="sum" name="calculo" value="sum" />
-    <label class="mb-2 col-1" for="suma">No</label>
-<br>
-    <label class="mb-2 col-4" for="costo">Cantidad de boletos:</label>
-    <input type="number" id="costo"><br>
-
-</div>
-
-
-<!-- Salidas -->
-
-<div class="container border p-6 float-right">
-
-    <h2>Salidas</h2>
-
-    <label class="mb-3 col-4" for="nombre">Volver a pagar:</label>
-    <input type="text" id="nombre"><br>
-
-</div>
+                <div>
+                    <img src="https://www.roc21.com/blog/wp-content/uploads/2019/07/logo-cinepolis.jpg" alt="">
+                </div>
+                <!-- <h1 class="titulos" >Cinepolis</h1> -->
+                
+            </div>
+            <div class="entradas" >
+                
+               
+                <div>
 
 
-<!-- Acciones -->
+                    <br>
+                    <br>
 
-<div class="container">   
+                    <mat-card>
+                        <mat-card-footer>Nombre del comprador(es):</mat-card-footer>
+                      </mat-card>
 
-    <button onclick="calcularCosto()">
-        Procesar
-    </button>
-    <br><br>
-    <button onclick="calcularCosto()">
-        Salir
-    </button>
+                      <br>
+                     
+                    <mat-form-field class="name">
+                        <label for="nombres"></label>
+                        
+                        <input matInput type="text" name="nombres" id="nombres" [(ngModel)]="nombre" required>
+                    </mat-form-field>
+                    <br>
+                    <br>
+                    <mat-card>
+                        <mat-card-footer>Boletos por comprar: </mat-card-footer>
+                      </mat-card>
+                        <br>
+                    <mat-form-field class="boleto">
+                      <label for="numBol"> </label>
+                      <input matInput type="number" name="numBol" id="numBol" [(ngModel)]="numBol" required>
+                  </mat-form-field>
+                  <br><br>
+                  <mat-card>
+                    <mat-card-footer>Numero de compradores:</mat-card-footer>
+                  </mat-card>
+                  <br>
+                  <mat-form-field class="compradors">
+                    <label for="cantComp"></label>
+                    <input matInput type="number" name="cantComp" id="cantComp" [(ngModel)]="cantComp" required>
+                </mat-form-field>
+                    <br>
+                   
+                    <label  for="tarjetas">
+                        
+                    </label>
+                    <mat-card>
+                        <mat-card-footer>¿Cuentas con tarjeta Cinepolis?</mat-card-footer>
+                      </mat-card>
+                      <br>
+                    <input type="radio" name="tarjetas" [(ngModel)]="tarjetas" id="1" value='1'> Si
+                    <input type="radio" name="tarjetas" [(ngModel)]="tarjetas" id="0" value='0'> No
+                    <br>
+                    <br>
+                   
+                </div>
+            </div>
+            <br>
+          
+            <br>
+            <br>
 
-   
 
-</div>
-    <br><br>
-    <button class="btn btn-primary" onclick="calcularCosto()">Calcular Costo</button><br>
-    <br><br>
-    <h2>Resultado:</h2>
-    <p id="resultado"></p>
+            
+            
+            <div class="accion">
+                
+                <div>
+                    <button mat-raised-button color="primary" type="submit" (click)="folio()" (ngSubmit)="MaxBol()">Cobrar</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button (click)="recargar()" mat-raised-button color="warn">Recargar</button>
+                </div>
+            </div>
+            <br>
 
+              
+            
 
+            
+                <div *ngIf="opera()" >
+
+                    
+                    <h2>Recibo de compra</h2>
+                    <p>Nombre(s): {{nombre}}</p>
+                    <p>Folio de compra: {{Nfolio}}</p>
+                    <p>No. de Boletos: {{numBol}}</p>
+                    <p>Total a pagar: ${{totalFinal}}</p>
+                </div>
+            
+
+        </div>
+    </form>
 </body>
+
 </html>
+
+
+
+
+
+
+
+ <!-- <p>Subtotal: {{Subtotal}}</p> -->
+  <!-- <p>Descuento por boletos: -{{descAdi}}%</p>
+                    <p>Descuento por tarjeta: -{{descTarj}}%</p> -->

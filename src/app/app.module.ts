@@ -9,6 +9,19 @@ import { PotenciasComponent } from './potencia/potencias/potencias.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CinepolisComponent } from './cinepolis/cinepolis/cinepolis.component';
 
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+import {MatRadioModule} from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion'
+import {MatDividerModule} from '@angular/material/divider';
+import {MatTableModule} from '@angular/material/table';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +32,15 @@ import { CinepolisComponent } from './cinepolis/cinepolis/cinepolis.component';
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
